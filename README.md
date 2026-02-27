@@ -1,22 +1,62 @@
 # LCD display
 1.69" LCD display PCB with on-board accelerometer, buzzer, and debugging interface
 
-## Feature Summary:
-* Rechargeable 3.7 LiPo battery cell: 320 mAh battery pack, charged via USB-C able to fit under pcb​
-  - reverse-polarity protection with ideal-diode, and regulation
-* Accelerometer: 3-axis acceleromter communicated via I2C for motion detection
-* Buzzer: magnetic buzzer controlled via PWM with varying frequency for varying decibel, flyback diode
-  since buzzer is inductive load to protect rest of circuitry
-* Display: 1.69" LCD display communicating via 4-wire SPI
+## Feature Summary
+- **Rechargeable 3.7V LiPo battery cell:** 320 mAh battery pack, charged via USB-C (fits under PCB)
+  - Reverse-polarity protection (ideal diode) + regulation
+- **Accelerometer:** 3-axis accelerometer via **I2C** for motion detection
+- **Buzzer:** magnetic buzzer via **PWM** (frequency control for tone/volume), **flyback diode** for inductive kickback protection
+- **Display:** 1.69" LCD via **4-wire SPI**
+- **Debug:** SWD header (3V3, SWDIO, SWCLK, NRST, GND)
 
+---
 
-<img width="1411" height="1155" alt="block_diagram drawio" src="https://github.com/user-attachments/assets/2c63ef96-fa5c-4c8b-8c80-daff45bedf2d" />
-<img width="1035" height="682" alt="Screenshot 2025-09-01 at 10 44 36 PM" src="https://github.com/user-attachments/assets/eb7d86e7-915f-4189-b6e1-eca0072f06fb" />
-<img width="1039" height="1037" alt="Screenshot 2025-09-01 at 11 04 22 PM" src="https://github.com/user-attachments/assets/781c8632-a022-4bcf-8236-6a2bc2d2a830" />
-<img width="1035" height="1017" alt="Screenshot 2025-09-01 at 11 03 02 PM" src="https://github.com/user-attachments/assets/53bc9d01-d4e0-47bf-9b12-95f9eddab725" />
-<img width="894" height="945" alt="image" src="https://github.com/user-attachments/assets/8a8f576f-4697-4216-a6c7-35910283fe41" />
-<img width="781" height="904" alt="image" src="https://github.com/user-attachments/assets/cd95f1de-1786-4304-96f9-ce7ea96d1677" />
-<img width="117" height="87" alt="image" src="https://github.com/user-attachments/assets/75bd5b4f-4497-4c66-8233-93e5261ec089" />
+## System Overview (Block Diagram)
+High-level architecture showing power path + STM32 peripherals (SPI display, I2C accel, PWM buzzer, SWD debug).
 
+![System block diagram](assets/watch6.png)
 
+---
 
+## Mechanical / Assembly View
+Stacked assembly render showing the compact form factor and how the display sits above the PCB.
+
+![Assembly / stacked render](assets/watch1.png)
+
+---
+
+## 3D PCB Renders
+
+### Component Side (MCU + power + sensor/buzzer circuitry)
+3D render of the main board side with the STM32 and supporting circuitry.
+
+![3D render - component side](assets/watch2.png)
+
+### Connector Side (USB-C + SWD header access)
+3D render showing USB-C placement and the SWD/debug header labeling.
+
+![3D render - connector side](assets/watch3.png)
+
+---
+
+## PCB Layout (KiCad)
+
+### Overall routed layout (all layers visible)
+Screenshot of the routed board in KiCad (routing + pours + placement).
+
+![KiCad routed layout](assets/watch4.png)
+
+### Top layer (routing + pours) + board dimensions
+Top copper view with pours and routing, including overall board dimensions.
+
+![Top layer + dimensions](assets/watch7.png)
+
+### Bottom layer (routing + pours)
+Bottom copper view showing routing/pours on the underside.
+
+![Bottom layer](assets/watch8.png)
+
+### Layer legend used in screenshots
+Reference legend for the layer colors used in the KiCad screenshots.
+
+![Layer legend](assets/watch9.png)
